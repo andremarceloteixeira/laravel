@@ -21,7 +21,7 @@ return array(
         'info' => 'Geral',
         'attachments' => 'Anexos',
         'process_attachments' => 'Anexos do Processo',
-        'client_attachments' => 'Anexos do Cliente',
+        'client_attachments' => 'Anexo',
         'extra' => 'Campos Extra',
         'situational' => 'Ponto de Situação',
         'key' => 'Nome do Campo',
