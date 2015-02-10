@@ -20,7 +20,7 @@ return array(
         'certificate' => 'Cert. Nº.',
         'info' => 'Geral',
         'attachments' => 'Anexos',
-        'process_attachments' => 'Anexos do Processo',
+        'process_attachments' => 'Anexos',
         'client_attachments' => 'Anexo',
         'extra' => 'Campos Extra',
         'situational' => 'Ponto de Situação',
