@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'perigest',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 'sBTEdj6CXmC1IBhh',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
