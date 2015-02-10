@@ -47,3 +47,33 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 */
 
 $app->run();
+
+/**
+ * Custom print_r
+ *
+ * @param mixed $r
+ * @param bool $dieAfter
+ */
+function pr($r, $dieAfter = false) {
+    echo '<pre>';
+    print_r($r);
+    echo '</pre>';
+    if ($dieAfter) {
+        die();
+    }
+}
+
+/**
+ * Custom var_dump
+ *
+ * @param mixed $r
+ * @param bool $dieAfter
+ */
+function pv($r, $dieAfter = false) {
+    echo '<pre>';
+    var_dump($r);
+    echo '</pre>';
+    if ($dieAfter) {
+        die();
+    }
+}

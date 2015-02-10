@@ -471,7 +471,8 @@ class Helper {
         }
     }
 
-    public function getFileTypeImg($ext) {
+    public function getFileTypeImg($ext)
+    {
         if (\File::exists(public_path() . '/assets/images/files/16/' . $ext . '.png')) {
             return 'assets/images/files/16/' . $ext . '.png';
         }

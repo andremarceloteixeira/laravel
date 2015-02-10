@@ -12,7 +12,7 @@ class ClientsProcessesController extends BaseController {
 
     public function index()
     {
-        $pending = $this->process->mine()->where('status_id', '=', '1')->get();
+        $pending = $this->getPendingProcesses();
         $processing = $this->process->mine()->where('status_id', '=', '2')->get();
         $complete = $this->process->mine()->where('status_id', '=', '3')->get();
         $cancelled = $this->process->mine()->where('status_id', '=', '4')->get();
@@ -20,6 +20,20 @@ class ClientsProcessesController extends BaseController {
             'complete' => $complete, 'cancelled' => $cancelled, 'pending' => $pending]);
     }
 
+
+    /**
+     *
+     * @return mixed
+     */
+    private function getPendingProcesses()
+    {
+        return $this->process->mine()->join('process_attachments',
+                    'processes.id', '=',
+                    'process_attachments.process_id')
+        ->select('processes.*', 'process_attachments.name', 'process_attachments.id as processId', 'process_attachments.path')
+        ->where('status_id', 1)
+        ->get();
+    }
     public function create()
     {
         return View::make('clients.processes.create',  array('reference' => strtoupper(uniqid())));
@@ -49,9 +63,7 @@ class ClientsProcessesController extends BaseController {
                     ['attachments.max' => 'Ficheiro Invalido. Maximo de Upload 10 MB']
                 );
                 $extension = Input::file("attachments")[0]->getClientOriginalExtension();
-//	var_dump(Input::file("attachments")[0]); die;
                 $extensionsValid = (!in_array($extension, ['png','gif','jpg','pdf','msg','JPGE','jpge','bmp']));
-         //    var_dump($validator->passes());  die; 
              if (!$validator->passes()) {
                     if ($extensionsValid) {
                         Session::flash('attachs_warning', 'Tipos Permitidos : png,gif,jpg,pdf,msg,JPGE,jpge,bmp');
@@ -72,6 +84,7 @@ class ClientsProcessesController extends BaseController {
                 File::makeDirectory(Config::get('settings.process_folder') . $process->folder, 0777);
             }
             $attachements = Helper::makeProcessAttachs($process, 'attachments');
+            Helper::makeClientAttachs($process, 'client_attachments');
             Helper::makeNotificationAdmin('notifications.new_process_ask', '', 'processes/' . $process->id);
             Session::flash('notification', trans('notifications.process_ask_create', ['name' => '']));
             return Redirect::route('clients.processes.index');

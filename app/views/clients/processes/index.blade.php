@@ -90,13 +90,11 @@
                             <i class="clip-file"></i> {{ trans('processes.attachments') }} <span class="caret"></span>
                         </a>
                         <ul role="menu" class="dropdown-menu pull-right">
-                            @foreach($p->clientAttachs as $a)
                             <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ route('processes.downloadClientAttach', ['id' => $a->id]) }}">
-                                    <img src="{{ asset(Helper::getFileTypeImg(explode('.', $a->name)[1])) }}" width="16" height="16" /> {{ $a->name }}
+                                <a role="menuitem" tabindex="-1" href="{{ route('processes.downloadClientAttach', ['id' => $p->processId]) }}">
+                                    <img src="{{ $p->name }}" width="16" height="16" /> {{ $p->name }}
                                 </a>
                             </li>
-                            @endforeach
                         </ul>
                     </div>
                 </td>
