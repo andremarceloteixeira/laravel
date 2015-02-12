@@ -4,6 +4,7 @@ class ClientsProcessesController extends BaseController {
 
     protected $process;
     protected $client;
+
     public function __construct(Process $process) {
         $this->beforeFilter('client');
         $this->client = Auth::user();
@@ -34,6 +35,7 @@ class ClientsProcessesController extends BaseController {
         ->where('status_id', 1)
         ->get();
     }
+
     public function create()
     {
         return View::make('clients.processes.create',  array('reference' => strtoupper(uniqid())));

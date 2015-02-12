@@ -23,37 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php">
+      <file leaf-file-name="show.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/processes/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="96" selection-start="3791" selection-end="3791" vertical-scroll-proportion="0.58285713" vertical-offset="1386" max-vertical-offset="5148">
+            <state line="280" column="14" selection-start="12938" selection-end="12938" vertical-scroll-proportion="-8.518518" vertical-offset="4580" max-vertical-offset="9486">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helper.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/facades/Helper.php">
+      <file leaf-file-name="processes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lang/en/processes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="474" column="5" selection-start="19940" selection-end="19940" vertical-scroll-proportion="-122.14815" vertical-offset="5234" max-vertical-offset="9090">
+            <state line="13" column="39" selection-start="466" selection-end="466" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="1098">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientsProcessesController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/ClientsProcessesController.php">
+      <file leaf-file-name="processes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lang/pt/processes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="122" selection-start="1176" selection-end="1176" vertical-scroll-proportion="-15.333333" vertical-offset="162" max-vertical-offset="2232">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PendingController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/PendingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="28" selection-start="3228" selection-end="3228" vertical-scroll-proportion="-2.6666667" vertical-offset="1134" max-vertical-offset="1692">
+            <state line="24" column="22" selection-start="932" selection-end="945" vertical-scroll-proportion="-5.296296" vertical-offset="146" max-vertical-offset="1170">
               <folding />
             </state>
           </provider>
@@ -62,7 +53,56 @@
       <file leaf-file-name="ProcessesController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ProcessesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="20" selection-start="5908" selection-end="5908" vertical-scroll-proportion="214.66667" vertical-offset="8100" max-vertical-offset="9252">
+            <state line="256" column="32" selection-start="9696" selection-end="9705" vertical-scroll-proportion="-5.6666665" vertical-offset="4302" max-vertical-offset="10044">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/ClientsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="16" selection-start="1347" selection-end="1347" vertical-scroll-proportion="-32.666668" vertical-offset="0" max-vertical-offset="2934">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="begin.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/reports/begin.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="98" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.76383764" vertical-offset="216" max-vertical-offset="1296">
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#p#2;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#5;n#p#2;n#td#0;n#tr#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientsProcessesController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/ClientsProcessesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="10" selection-start="1702" selection-end="1702" vertical-scroll-proportion="-16.666666" vertical-offset="486" max-vertical-offset="2268">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PendingController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/PendingController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="28" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1692">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="28" selection-start="1881" selection-end="1897" vertical-scroll-proportion="-11.0" vertical-offset="0" max-vertical-offset="1224">
               <folding />
             </state>
           </provider>
@@ -71,16 +111,7 @@
       <file leaf-file-name="ExpertsProcessesController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ExpertsProcessesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="2937" selection-end="3007" vertical-scroll-proportion="-9.740741" vertical-offset="979" max-vertical-offset="1566">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyProcessesController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/MyProcessesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="20" selection-start="2426" selection-end="2426" vertical-scroll-proportion="-45.333332" vertical-offset="0" max-vertical-offset="1548">
+            <state line="69" column="0" selection-start="2937" selection-end="3007" vertical-scroll-proportion="0.0" vertical-offset="1242" max-vertical-offset="1566">
               <folding />
             </state>
           </provider>
@@ -100,19 +131,23 @@
         <option value="$PROJECT_DIR$/app/config/local/database.php" />
         <option value="$PROJECT_DIR$/app/config/local/app.php" />
         <option value="$PROJECT_DIR$/app/config/database.php" />
-        <option value="$PROJECT_DIR$/app/lang/pt/processes.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/app/facades/Helper.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ClientsProcessesController.php" />
         <option value="$PROJECT_DIR$/app/views/clients/processes/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ClientsController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ClientsProcessesController.php" />
+        <option value="$PROJECT_DIR$/app/lang/pt/processes.php" />
+        <option value="$PROJECT_DIR$/app/views/processes/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ProcessesController.php" />
+        <option value="$PROJECT_DIR$/app/facades/Helper.php" />
+        <option value="$PROJECT_DIR$/app/views/reports/begin.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1922" />
-    <option name="height" value="1056" />
+    <option name="x" value="6" />
+    <option name="width" value="1914" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -201,7 +236,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -213,6 +270,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -260,15 +318,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1056" extended-state="6" />
+    <frame x="6" y="0" width="1914" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2631016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.07955801" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32154697" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30199116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -300,25 +358,68 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/local/database.php">
+    <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="2022" selection-end="2026" vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="2340">
+        <state line="94" column="96" selection-start="3791" selection-end="3791" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="5148">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facades/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="474" column="5" selection-start="19940" selection-end="19940" vertical-scroll-proportion="0.0" vertical-offset="8532" max-vertical-offset="9090">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ClientsProcessesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="122" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PendingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="28" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ProcessesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="20" selection-start="5908" selection-end="5908" vertical-scroll-proportion="0.0" vertical-offset="8100" max-vertical-offset="9252">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ExpertsProcessesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2937" selection-end="3007" vertical-scroll-proportion="0.0" vertical-offset="1242" max-vertical-offset="1566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/MyProcessesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="20" selection-start="2426" selection-end="2426" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="1548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/local/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="32" selection-start="2022" selection-end="2026" vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="2340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="1818" selection-end="1822" vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2340">
-          <folding />
-        </state>
+        <state line="59" column="32" selection-start="1818" selection-end="1822" vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lang/pt/processes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1152">
-          <folding />
-        </state>
+        <state line="22" column="40" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1152" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PendingController.php">
@@ -337,9 +438,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php.save">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="65" selection-start="0" selection-end="16714" vertical-scroll-proportion="0.0" vertical-offset="4640" max-vertical-offset="5184">
-          <folding />
-        </state>
+        <state line="250" column="65" selection-start="0" selection-end="16714" vertical-scroll-proportion="0.0" vertical-offset="4640" max-vertical-offset="5184" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ClientsProcessesController.php">
@@ -351,30 +450,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3402">
-          <folding />
-        </state>
+        <state line="14" column="19" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3402" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="6" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="432">
-          <folding />
-        </state>
+        <state line="13" column="6" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="432" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php">
@@ -386,9 +477,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Process.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="20" selection-start="4006" selection-end="4006" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2898">
-          <folding />
-        </state>
+        <state line="99" column="20" selection-start="4006" selection-end="4006" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2898" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PendingController.php">
@@ -407,9 +496,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php.save">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="65" selection-start="0" selection-end="16714" vertical-scroll-proportion="0.0" vertical-offset="4640" max-vertical-offset="5184">
-          <folding />
-        </state>
+        <state line="250" column="65" selection-start="0" selection-end="16714" vertical-scroll-proportion="0.0" vertical-offset="4640" max-vertical-offset="5184" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ClientsProcessesController.php">
@@ -421,148 +508,171 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3402">
-          <folding />
-        </state>
+        <state line="14" column="19" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3402" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="876">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3402">
-          <folding />
-        </state>
+        <state line="14" column="19" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3402" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php.save">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="65" selection-start="0" selection-end="16714" vertical-scroll-proportion="0.0" vertical-offset="4640" max-vertical-offset="5184">
-          <folding />
-        </state>
+        <state line="250" column="65" selection-start="0" selection-end="16714" vertical-scroll-proportion="0.0" vertical-offset="4640" max-vertical-offset="5184" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Process.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="20" selection-start="4006" selection-end="4006" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2898">
-          <folding />
-        </state>
+        <state line="99" column="20" selection-start="4006" selection-end="4006" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2898" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="10" selection-start="427" selection-end="432" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
+        <state line="15" column="10" selection-start="427" selection-end="432" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="432" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="2022" selection-end="2026" vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="2340">
-          <folding />
-        </state>
+        <state line="59" column="32" selection-start="2022" selection-end="2026" vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="2340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="1818" selection-end="1822" vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lang/pt/processes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="44" selection-start="1841" selection-end="1841" vertical-scroll-proportion="-5.5185184" vertical-offset="422" max-vertical-offset="1152">
-          <folding />
-        </state>
+        <state line="59" column="32" selection-start="1818" selection-end="1822" vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/processes/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="1" selection-start="2005" selection-end="2005" vertical-scroll-proportion="-43.51852" vertical-offset="139" max-vertical-offset="1440">
-          <folding />
-        </state>
+        <state line="78" column="1" selection-start="2005" selection-end="2005" vertical-scroll-proportion="-43.51852" vertical-offset="139" max-vertical-offset="1440" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ExpertsProcessesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="2937" selection-end="3007" vertical-scroll-proportion="-9.740741" vertical-offset="979" max-vertical-offset="1566">
+        <state line="69" column="0" selection-start="2937" selection-end="3007" vertical-scroll-proportion="0.0" vertical-offset="1242" max-vertical-offset="1566">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MyProcessesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="20" selection-start="2426" selection-end="2426" vertical-scroll-proportion="-45.333332" vertical-offset="0" max-vertical-offset="1548">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facades/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="474" column="5" selection-start="19940" selection-end="19940" vertical-scroll-proportion="-122.14815" vertical-offset="5234" max-vertical-offset="9090">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ProcessesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="20" selection-start="5908" selection-end="5908" vertical-scroll-proportion="214.66667" vertical-offset="8100" max-vertical-offset="9252">
+        <state line="68" column="20" selection-start="2426" selection-end="2426" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="1548">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PendingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="28" selection-start="3228" selection-end="3228" vertical-scroll-proportion="-2.6666667" vertical-offset="1134" max-vertical-offset="1692">
+        <state line="67" column="28" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ClientsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="16" selection-start="1347" selection-end="1347" vertical-scroll-proportion="-32.666668" vertical-offset="0" max-vertical-offset="2934">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ClientsProcessesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="122" selection-start="1176" selection-end="1176" vertical-scroll-proportion="-15.333333" vertical-offset="162" max-vertical-offset="2232">
+        <state line="52" column="10" selection-start="1702" selection-end="1702" vertical-scroll-proportion="-16.666666" vertical-offset="486" max-vertical-offset="2268">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="28" selection-start="1881" selection-end="1897" vertical-scroll-proportion="-11.0" vertical-offset="0" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/processes/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="96" selection-start="3791" selection-end="3791" vertical-scroll-proportion="0.58285713" vertical-offset="1386" max-vertical-offset="5148">
+        <state line="90" column="28" selection-start="3423" selection-end="3423" vertical-scroll-proportion="-8.666667" vertical-offset="1386" max-vertical-offset="5148">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/storage/views/8daf3e5ebd6b6090ba3f3906d0e0a5d9">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="315" column="67" selection-start="15511" selection-end="15511" vertical-scroll-proportion="0.69451696" vertical-offset="5138" max-vertical-offset="9828">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lang/en/processes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="39" selection-start="466" selection-end="466" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="1098">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lang/pt/processes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="22" selection-start="932" selection-end="945" vertical-scroll-proportion="-5.296296" vertical-offset="146" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/processes/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="280" column="14" selection-start="12938" selection-end="12938" vertical-scroll-proportion="-8.518518" vertical-offset="4580" max-vertical-offset="9486">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ProcessesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="256" column="32" selection-start="9696" selection-end="9705" vertical-scroll-proportion="-5.6666665" vertical-offset="4302" max-vertical-offset="10044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facades/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="33" selection-start="5100" selection-end="5100" vertical-scroll-proportion="0.59778595" vertical-offset="2502" max-vertical-offset="9108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/begin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="98" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.76383764" vertical-offset="216" max-vertical-offset="1296">
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#p#2;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#5;n#p#2;n#td#0;n#tr#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

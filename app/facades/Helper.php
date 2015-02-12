@@ -147,7 +147,8 @@ class Helper {
         return true;
     }
 
-    public function makeBegin($process, $download = false) {
+    public function makeBegin($process, $download = false)
+    {
         if (is_null($process)) {
             return false;
         }

@@ -1,14 +1,23 @@
 <?php
 
-class ProcessesController extends BaseController {
+class ProcessesController extends BaseController
+{
 
     protected $process;
     protected $user;
 
-    public function __construct(Process $process) {
-        $this->beforeFilter('admin', ['only' => ['index', 'create', 'store', 'edit', 'update', 'completeProcess', 'cancelProcess', 'addInvoice', 'downloadFinal']]);
-        $this->beforeFilter('expert', ['only' => ['sendPreliminar', 'deleteProcessAttach', 'downloadProcessAttach', 'downloadProcess']]);
-        $this->beforeFilter('auth', ['only' => ['preliminar', 'downloadPreliminar', 'survey', 'downloadSurvey', 'show', 'downloadClientAttach', 'deleteClientAttach', 'begin', 'downloadBegin']]);
+    /**
+     * @param Process $process
+     */
+    public function __construct(Process $process)
+    {
+
+        $this->beforeFilter('admin', ['only' => ['index', 'create', 'store', 'edit', 'update',
+            'completeProcess', 'cancelProcess', 'addInvoice', 'downloadFinal']]);
+        $this->beforeFilter('expert', ['only' => ['sendPreliminar', 'deleteProcessAttach',
+            'downloadProcessAttach', 'downloadProcess']]);
+        $this->beforeFilter('auth', ['only' => ['preliminar', 'downloadPreliminar', 'survey', 'downloadSurvey', 'show',
+            'downloadClientAttach', 'deleteClientAttach', 'begin', 'downloadBegin']]);
         $this->beforeFilter('client', ['only' => ['downloadInvoice']]);
         $this->beforeFilter('ajax', ['only' => ['deleteAttach', 'sendPreliminar']]);
         $this->process = $process;
@@ -20,19 +29,29 @@ class ProcessesController extends BaseController {
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
+
         $processing = $this->process->where('status_id', '=', '2')->get();
         $complete = $this->process->where('status_id', '=', '3')->get();
         $cancelled = $this->process->where('status_id', '=', '4')->get();
         return View::make('processes.index')
-                        ->with(['processing' => $processing, 'complete' => $complete, 'cancelled' => $cancelled]);
+            ->with(['processing' => $processing, 'complete' => $complete, 'cancelled' => $cancelled]);
     }
 
-    public function create() {
+    /**
+     * @return mixed
+     */
+    public function create()
+    {
         return View::make('processes.create');
     }
 
-    public function store() {
+    /**
+     * @return mixed
+     */
+    public function store()
+    {
         $input = Input::all();
         $rules = Process::$rules;
         $validation = Validator::make($input, $rules);
@@ -74,11 +93,16 @@ class ProcessesController extends BaseController {
             return Redirect::route('processes.index');
         }
         return Redirect::route('processes.create')
-                        ->withInput(Input::except('process_attachments', 'client_attachments'))
-                        ->withErrors($validation);
+            ->withInput(Input::except('process_attachments', 'client_attachments'))
+            ->withErrors($validation);
     }
 
-    public function edit($id) {
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function edit($id)
+    {
         $process = $this->process->find($id);
 
         if (!Check::canEditProcess($process)) {
@@ -88,7 +112,8 @@ class ProcessesController extends BaseController {
         return View::make('processes.edit', compact('process'));
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $process = $this->process->find($id);
         if (!Check::canEditProcess($process)) {
             return Redirect::route('processes.index');
@@ -135,11 +160,12 @@ class ProcessesController extends BaseController {
         }
 
         return Redirect::route('processes.edit', ['id' => $id])
-                        ->withInput(Input::except('process_attachments', 'client_attachments'))
-                        ->withErrors($validation);
+            ->withInput(Input::except('process_attachments', 'client_attachments'))
+            ->withErrors($validation);
     }
 
-    public function preliminar($id) {
+    public function preliminar($id)
+    {
         $process = $this->process->find($id);
         if (!Check::canUpgradeProcess($process)) {
             return Redirect::back();
@@ -157,10 +183,11 @@ class ProcessesController extends BaseController {
         }
 
         return View::make('reports.preliminar', compact('process'))
-                        ->with(['topFixed' => route('processes.downloadPreliminar', $process->id), 'back' => $back, 'edit' => $edit]);
+            ->with(['topFixed' => route('processes.downloadPreliminar', $process->id), 'back' => $back, 'edit' => $edit]);
     }
 
-    public function downloadPreliminar($id) {
+    public function downloadPreliminar($id)
+    {
         $process = $this->process->find($id);
 
         if (is_null($process->type)) {
@@ -169,7 +196,8 @@ class ProcessesController extends BaseController {
         return Helper::makePreliminar($process, false, true);
     }
 
-    public function survey($id) {
+    public function survey($id)
+    {
         $process = $this->process->find($id);
         if (!Check::canUpgradeProcess($process)) {
             return Redirect::route('processes.index');
@@ -184,10 +212,11 @@ class ProcessesController extends BaseController {
         }
 
         return View::make('reports.survey', compact('process'))
-                        ->with(['topFixed' => route('processes.downloadSurvey', $process->id), 'back' => $back, 'edit' => $edit]);
+            ->with(['topFixed' => route('processes.downloadSurvey', $process->id), 'back' => $back, 'edit' => $edit]);
     }
 
-    public function downloadSurvey($id) {
+    public function downloadSurvey($id)
+    {
         $process = $this->process->find($id);
 
         if (is_null($process->type)) {
@@ -197,7 +226,8 @@ class ProcessesController extends BaseController {
         return Helper::makeSurvey($process, true);
     }
 
-    public function begin($id) {
+    public function begin($id)
+    {
         $process = $this->process->find($id);
         if (!Check::canUpgradeProcess($process)) {
             return Redirect::route('processes.index');
@@ -212,10 +242,12 @@ class ProcessesController extends BaseController {
         }
 
         return View::make('reports.begin', compact('process'))
-                        ->with(['topFixed' => route('processes.downloadBegin', $process->id), 'back' => $back, 'edit' => $edit]);
+            ->with(['topFixed' => route('processes.downloadBegin', $process->id), 'back' => $back, 'edit' => $edit]);
     }
 
-    public function downloadBegin($id) {
+    public function downloadBegin($id)
+    {
+
         $process = $this->process->find($id);
 
         if (is_null($process->type)) {
@@ -225,7 +257,8 @@ class ProcessesController extends BaseController {
         return Helper::makeBegin($process, true);
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $process = $this->process->find($id);
         if (is_null($process)) {
             return Redirect::route('processes.index');
@@ -250,10 +283,11 @@ class ProcessesController extends BaseController {
             $back = trans('navigation.processes');
         }
         return View::make('processes.show')
-                        ->with(['process' => $process, 'routeBack' => $routeBack, 'back' => $back]);
+            ->with(['process' => $process, 'routeBack' => $routeBack, 'back' => $back]);
     }
 
-    public function sendPreliminar() {
+    public function sendPreliminar()
+    {
         try {
             if (!Input::has('id')) {
                 return Response::json(['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.preliminar_send_param')]);
@@ -274,7 +308,8 @@ class ProcessesController extends BaseController {
         }
     }
 
-    public function deleteProcessAttach() {
+    public function deleteProcessAttach()
+    {
         try {
             if (!Input::has('id')) {
                 return Response::json(['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.preliminar_send_param')]);
@@ -295,7 +330,8 @@ class ProcessesController extends BaseController {
         }
     }
 
-    public function deleteClientAttach() {
+    public function deleteClientAttach()
+    {
         try {
             if (!Input::has('id')) {
                 return Response::json(['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.preliminar_send_param')]);
@@ -316,7 +352,8 @@ class ProcessesController extends BaseController {
         }
     }
 
-    public function addInvoice() {
+    public function addInvoice()
+    {
         $rules = [
             'id' => 'required|exists:processes,id',
             'invoice' => 'required|mimes:pdf|max:10240'
@@ -328,7 +365,7 @@ class ProcessesController extends BaseController {
 
             if ($process->status_id != 3) {
                 return Redirect::back()
-                                ->withErrors([trans('notifications.error_invoice')]);
+                    ->withErrors([trans('notifications.error_invoice')]);
             }
 
             $file = Input::file('invoice');
@@ -346,10 +383,11 @@ class ProcessesController extends BaseController {
             return Redirect::back();
         }
         return Redirect::back()
-                        ->withErrors($validator);
+            ->withErrors($validator);
     }
 
-    public function completeProcess() {
+    public function completeProcess()
+    {
         $rules = [
             'id' => 'required|exists:processes,id',
             'file' => 'required|mimes:pdf|max:5120',
@@ -363,7 +401,7 @@ class ProcessesController extends BaseController {
 
             if (!Check::canUpgradeProcess($process)) {
                 return Redirect::back()
-                                ->withErrors([trans('notifications.error_complete_process')]);
+                    ->withErrors([trans('notifications.error_complete_process')]);
             }
 
             $file = Input::file('file');
@@ -390,10 +428,11 @@ class ProcessesController extends BaseController {
             }
         }
         return Redirect::back()
-                        ->withErrors($validator);
+            ->withErrors($validator);
     }
 
-    public function cancelProcess() {
+    public function cancelProcess()
+    {
         $rules = [
             'id' => 'required|exists:processes,id',
             'cancel_reason' => 'required|max:500'
@@ -416,10 +455,11 @@ class ProcessesController extends BaseController {
             Session::flash('notification', trans('notifications.process_cancel', ['name' => $process->certificate, 'type' => trans('processes.singular')]));
         }
         return Redirect::back()
-                        ->withErrors($validator);
+            ->withErrors($validator);
     }
 
-    public function downloadProcess($id) {
+    public function downloadProcess($id)
+    {
         $process = $this->process->find($id);
 
         if (!Check::canUpgradeProcess($process)) {
@@ -430,7 +470,8 @@ class ProcessesController extends BaseController {
         return Response::download($path);
     }
 
-    public function downloadProcessAttach($id) {
+    public function downloadProcessAttach($id)
+    {
         $imgs = ['jpg', 'png', 'gif'];
         $attach = ProcessAttach::find($id);
 
@@ -450,7 +491,8 @@ class ProcessesController extends BaseController {
         return Response::download($path);
     }
 
-    public function downloadClientAttach($id) {
+    public function downloadClientAttach($id)
+    {
         $imgs = ['jpg', 'png', 'gif'];
         $attach = ClientAttach::find($id);
 
@@ -470,7 +512,8 @@ class ProcessesController extends BaseController {
         return Response::download($path);
     }
 
-    public function downloadFinal($id) {
+    public function downloadFinal($id)
+    {
         $process = $this->process->find($id);
 
         if (is_null($process)) {
@@ -486,7 +529,8 @@ class ProcessesController extends BaseController {
         //return Response::download($report);
     }
 
-    public function downloadInvoice($id) {
+    public function downloadInvoice($id)
+    {
         $process = $this->process->find($id);
 
         if (is_null($process)) {

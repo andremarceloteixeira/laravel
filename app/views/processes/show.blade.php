@@ -305,7 +305,7 @@
             <td> 
                 <div class="btn-group">
                     <a class="btn btn-dropdown-toggle btn-sm btn-teal" data-toggle="dropdown" href="#">
-                        <i class="clip-file"></i> {{ trans('processes.client_attachments') }} <span class="caret"></span>
+                        <i class="clip-file"></i> {{ trans('processes.client_button') }} <span class="caret"></span>
                     </a>
                     <ul role="menu" class="dropdown-menu pull-right">
                         @foreach($process->clientAttachs as $a)
