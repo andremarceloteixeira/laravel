@@ -4,7 +4,7 @@
 {{ trans('emails.welcome', ['name' => $name]) }}
 
 <p>
-    {{ trans('emails.register-content', ['email' => $name, 'password' => $password]) }}
+    {{ trans('emails.register-content', ['email' => $username, 'password' => $password]) }}
 </p>
 
 <p>
