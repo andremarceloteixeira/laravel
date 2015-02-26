@@ -48,7 +48,7 @@ class ClientsController extends BaseController {
             $client = $this->client->create($input);
 
             if (!Helper::isNull($client->email)) {
-                Helper::registerEmail($client->username, $client->email, $password, $client->country_id);
+                Helper::registerEmail($client->name, $client->email, $password, $client->country_id);
             }
             
             Helper::makeNotificationAdmin('notifications.new_client', $client->name, 'clients/'.$client->user_id);
