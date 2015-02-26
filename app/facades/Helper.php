@@ -239,12 +239,14 @@ class Helper {
         return $text;
     }
 
-    public function registerEmail($name, $email, $password, $id) {
+    public function registerEmail($name, $email, $password, $id, $username = '') {
+        $username = !empty($username) ? $username : $name; // if 
         $lang = $this->convertLocale($id);
         $data['to'] = $email;
         $data['view'] = 'emails.auth.register';
         $data['subject'] = 'emails.register-subject';
         $data['name'] = $name;
+        $data['username'] = $username;
         $data['email'] = $email;
         $data['password'] = $password;
         $data['lang'] = $lang;
