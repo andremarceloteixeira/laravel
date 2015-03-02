@@ -240,7 +240,7 @@ class Helper {
     }
 
     public function registerEmail($name, $email, $password, $id, $username = '') {
-        $username = !empty($username) ? $username : $name; // if 
+        $username = !empty($username) ? $username : $name; // if
         $lang = $this->convertLocale($id);
         $data['to'] = $email;
         $data['view'] = 'emails.auth.register';
@@ -384,9 +384,8 @@ class Helper {
                 \File::makeDirectory($attachfolder, 0777);
             }
             $db_path = $process->folder . 'anexos_processo/';
-            
             foreach (\Input::file($attachments) as $f) {
-                $validator = \Validator::make(['attachments' => $f], ['attachments' => 'max:5120']);
+                $validator = \Validator::make(['attachments' => $f], ['attachments' => 'max:10240']);
                 if ($validator->passes()) {
                     $original = $f->getClientOriginalName();
                     $new = str_random(30) . '.' . $f->getClientOriginalExtension();

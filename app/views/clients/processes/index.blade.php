@@ -91,7 +91,7 @@
                         </a>
                         <ul role="menu" class="dropdown-menu pull-right">
                             <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ route('processes.downloadClientAttach', ['id' => $p->processId]) }}">
+                                <a role="menuitem" tabindex="-1" href="{{ route('processes.downloadProcessAttach', ['id' => $p->processId]) }}">
                                     <img src="{{ $p->name }}" width="16" height="16" /> {{ $p->name }}
                                 </a>
                             </li>

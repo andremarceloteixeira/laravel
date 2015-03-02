@@ -12,14 +12,14 @@ class ProcessesController extends BaseController
     public function __construct(Process $process)
     {
 
-        $this->beforeFilter('admin', ['only' => ['index', 'create', 'store', 'edit', 'update',
+        /*$this->beforeFilter('admin', ['only' => ['index', 'create', 'store', 'edit', 'update',
             'completeProcess', 'cancelProcess', 'addInvoice', 'downloadFinal']]);
         $this->beforeFilter('expert', ['only' => ['sendPreliminar', 'deleteProcessAttach',
             'downloadProcessAttach', 'downloadProcess']]);
         $this->beforeFilter('auth', ['only' => ['preliminar', 'downloadPreliminar', 'survey', 'downloadSurvey', 'show',
             'downloadClientAttach', 'deleteClientAttach', 'begin', 'downloadBegin']]);
-        $this->beforeFilter('client', ['only' => ['downloadInvoice']]);
-        $this->beforeFilter('ajax', ['only' => ['deleteAttach', 'sendPreliminar']]);
+        $this->beforeFilter('client', ['only' => ['downloadInvoice', 'deleteClientAttach']]);
+        $this->beforeFilter('ajax', ['only' => ['deleteAttach', 'sendPreliminar']]);*/
         $this->process = $process;
         $this->user = Auth::user();
     }
