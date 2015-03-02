@@ -46,7 +46,7 @@ class ProcessesController extends BaseController
     {
         $data = date("Y");
         $reference = false;
-        $lastProcess = $this->process->orderby('updated_at', 'desc')->first();
+        $lastProcess = $this->process->orderby('created_at', 'desc')->first();
         if (!empty($lastProcess)) {
             $reference = explode('/',$lastProcess->certificate);
             $reference = $reference[0]+ 1 .'/' . substr($data, 2);
