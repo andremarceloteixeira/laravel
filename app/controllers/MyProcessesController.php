@@ -12,6 +12,7 @@ class MyProcessesController extends BaseController {
     }
 
     public function index() {
+
         $processing = $this->process->mine()->where('status_id', '=', '2')->get();
         $complete = $this->process->mine()->where('status_id', '=', '3')->get();
         $cancelled = $this->process->mine()->where('status_id', '=', '4')->get();

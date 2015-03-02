@@ -28,11 +28,11 @@ class ClientsProcessesController extends BaseController {
      */
     private function getPendingProcesses()
     {
-        return $this->process->mine()->join('process_attachments',
+        return $this->process->mine()->leftjoin('process_attachments',
                     'processes.id', '=',
                     'process_attachments.process_id')
         ->select('processes.*', 'process_attachments.name', 'process_attachments.id as processId', 'process_attachments.path')
-        ->where('status_id', 1)
+        ->where('status_id', '1')
         ->get();
     }
 
