@@ -44,7 +44,14 @@ class ProcessesController extends BaseController
      */
     public function create()
     {
-        return View::make('processes.create');
+        $data = date("Y");
+        $reference = false;
+        $lastProcess = $this->process->orderby('updated_at', 'desc')->first();
+        if (!empty($lastProcess)) {
+            $reference = explode('/',$lastProcess->certificate);
+            $reference = $reference[0]+ 1 .'/' . substr($data, 2);
+        }
+        return View::make('processes.create', ['reference' =>  $reference]);
     }
 
     /**

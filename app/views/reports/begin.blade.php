@@ -10,7 +10,7 @@
 
 @section('content')
 <tr>
-    <td colspan="2" class="content" style="padding-top: 20px;padding-bottom: 340px;">
+    <td colspan="2" class="content" style="padding-top: 20px;padding-bottom: 250px;">
         <p class="field">
             <span class="title"> {{ trans('processes.client_id') }}: </span>
             <span class="text"> {{ $process->client->name }} </span> 
