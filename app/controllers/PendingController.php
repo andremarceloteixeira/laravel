@@ -8,7 +8,6 @@ class PendingController extends BaseController {
     protected $expert;
 
     public function __construct(Process $process, Expert $expert) {
-        die;
         $this->beforeFilter('admin');
         $this->process = $process;
         $this->user = Auth::user();
