@@ -53,7 +53,15 @@ Route::get('ajax/processes/charge', ['uses' => 'PendingController@charge', 'as' 
 Route::resource('pending', 'PendingController', ['only' => ['index']]);
 
 Route::resource('me/processes', 'ExpertsProcessesController', ['names' => ['index' => 'experts.processes.index', 'edit' => 'experts.processes.edit', 'update' => 'experts.processes.update'], 'only' => ['index', 'edit', 'update']]);
-Route::resource('my/processes', 'ClientsProcessesController', ['names' => ['index' => 'clients.processes.index', 'create' => 'clients.processes.create', 'store' => 'clients.processes.store'], 'only' => ['index', 'create', 'store']]);
+
+Route::resource('my/processes', 'ClientsProcessesController',
+    ['names' => [
+                            'index' => 'clients.processes.index',
+                            'create' => 'clients.processes.create',
+                            'store' => 'clients.processes.store',
+                            'only' => ['index', 'create', 'store']]]);
+
+Route::post('/my/processes/account', ['uses' => 'ClientsProcessesController@account', 'as' => 'clients.processes.account']);
 
 Route::get('calendar', ['uses' => 'EventsController@index', 'as' => 'calendar.index']);
 Route::post('ajax/calendar/store', ['uses' => 'EventsController@store', 'as' => 'calendar.store']);

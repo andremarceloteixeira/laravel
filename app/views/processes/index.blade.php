@@ -8,7 +8,7 @@
             $('#invoiceModalTitle').text($(this).data('title'));
             $('#invoiceModal').modal('show');
         });
-        
+
         $('.completeProcessAction').click(function() {
             $('#completeModalId').attr('value', $(this).data('id'));
             $('#completeModalTitle').text($(this).data('title'));
@@ -20,7 +20,7 @@
             $('#cancelModalTitle').text($(this).data('title'));
             $('#cancelModal').modal('show');
         });
-        
+
         $('#invoiceModalForm').on('submit', function() {
             var l = Ladda.create(document.getElementById('invoiceModalButton'));
             l.start();
@@ -70,7 +70,7 @@
 <div class="row">
     <div class="col-md-12 space20">
         <a href="{{ route('processes.create') }}" class="btn btn-green">
-            <i class="fa fa-plus"></i> {{ trans('actions.create', ['type' => trans('processes.singular')]) }} 
+            <i class="fa fa-plus"></i> {{ trans('actions.create', ['type' => trans('processes.singular')]) }}
         </a>
     </div>
 </div>
@@ -84,18 +84,18 @@
         </li>
         <li class="">
             <a href="#panel_tab_complete" data-toggle="tab">
-                <i class="green clip-checkmark-circle"></i> {{ trans('status.completed') }} 
+                <i class="green clip-checkmark-circle"></i> {{ trans('status.completed') }}
             </a>
         </li>
         <li class="">
             <a href="#panel_tab_cancelled" data-toggle="tab">
-                <i class="green clip-cancel-circle"></i> {{ trans('status.cancelled') }} 
+                <i class="green clip-cancel-circle"></i> {{ trans('status.cancelled') }}
             </a>
         </li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="panel_tab_processing">
-            <div class="table-responsive">               
+            <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover table-full-width static-table">
                     <thead>
                         <tr>
@@ -114,7 +114,7 @@
                         <tr>
                             <td data-order="{{ $p->id }}">{{ $p->certificate }}</td>
                             <td><a data-title="{{ $p->client->name }}" data-image="{{ asset($p->client->photo) }}" data-subtitle="{{ $p->client->email }}" class="popover-style">{{ $p->client->name }}</a></td>
-                            @if(!is_null($p->expert)) 
+                            @if(!is_null($p->expert))
                             <td><a data-title="{{ $p->expert->name }}" data-image="{{ asset($p->expert->photo) }}" data-subtitle="{{ $p->expert->email }}<br>{{ $p->expert->function }}" class="popover-style">{{ $p->expert->name }}</a></td>
                             @else
                             <td></td>
@@ -187,7 +187,7 @@
             </div>
         </div>
         <div class="tab-pane" id="panel_tab_complete">
-            <div class="table-responsive">               
+            <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover table-full-width static-table">
                     <thead>
                         <tr>
@@ -205,7 +205,7 @@
                         <tr>
                             <td data-order="{{ $p->id }}">{{ $p->certificate }}</td>
                             <td><a data-title="{{ $p->client->name }}" data-image="{{ asset($p->client->photo) }}" data-subtitle="{{ $p->client->email }}" class="popover-style">{{ $p->client->name }}</a></td>
-                            @if(!is_null($p->expert)) 
+                            @if(!is_null($p->expert))
                             <td><a data-title="{{ $p->expert->name }}" data-image="{{ asset($p->expert->photo) }}" data-subtitle="{{ $p->expert->email }}<br>{{ $p->expert->function }}" class="popover-style">{{ $p->expert->name }}</a></td>
                             @else
                             <td></td>
@@ -259,7 +259,7 @@
             </div>
         </div>
         <div class="tab-pane" id="panel_tab_cancelled">
-            <div class="table-responsive">               
+            <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover table-full-width static-table">
                     <thead>
                         <tr>
@@ -277,7 +277,7 @@
                         <tr>
                             <td data-order="{{ $p->id }}">{{ $p->certificate }}</td>
                             <td><a data-title="{{ $p->client->name }}" data-image="{{ asset($p->client->photo) }}" data-subtitle="{{ $p->client->email }}" class="popover-style">{{ $p->client->name }}</a></td>
-                            @if(!is_null($p->expert)) 
+                            @if(!is_null($p->expert))
                             <td><a data-title="{{ $p->expert->name }}" data-image="{{ asset($p->expert->photo) }}" data-subtitle="{{ $p->expert->email }}<br>{{ $p->expert->function }}" class="popover-style">{{ $p->expert->name }}</a></td>
                             @else
                             <td></td>
@@ -339,7 +339,7 @@
             <input id="invoiceModalId" name="id" type="hidden" />
             <div class="form-group">
                 <label class="col-sm-2 control-label label_blue">
-                    {{ trans('processes.invoice') }} 
+                    {{ trans('processes.invoice') }}
                 </label>
                 <div class="col-sm-7">
                     <input type="file" name="invoice" class="file-input">
@@ -360,7 +360,7 @@
         </div>
     </form>
 </div>
-<!-- end: INVOICE PROCESS MODAL --> 
+<!-- end: INVOICE PROCESS MODAL -->
 
 <!-- start: COMPLETE PROCESS MODAL -->
 <div id="completeModal" class="modal fade" tabindex="-1" data-width="700" style="display: none;">
@@ -373,7 +373,7 @@
             <input id="completeModalId" name="id" type="hidden" />
             <div class="form-group">
                 <label class="col-sm-2 control-label label_blue">
-                    {{ trans('processes.complete_report') }} 
+                    {{ trans('processes.complete_report') }}
                 </label>
                 <div class="col-sm-7">
                     <input type="file" name="file" class="file-input">
@@ -381,7 +381,7 @@
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label label_blue">
-                    {{ trans('processes.invoice') }} 
+                    {{ trans('processes.invoice') }}
                 </label>
                 <div class="col-sm-7">
                     <input type="file" name="invoice" class="file-input">
@@ -402,7 +402,7 @@
         </div>
     </form>
 </div>
-<!-- end: COMPLETE PROCESS MODAL --> 
+<!-- end: COMPLETE PROCESS MODAL -->
 
 <!-- start: CANCEL PROCESS MODAL -->
 <div id="cancelModal" class="modal fade" tabindex="-1" data-width="700" style="display: none;">
@@ -415,7 +415,7 @@
             <input id="cancelModalId" name="id" type="hidden" />
             <div class="form-group">
                 <label class="col-sm-2 control-label label_blue">
-                    {{ trans('processes.cancel_reason') }} 
+                    {{ trans('processes.cancel_reason') }}
                 </label>
                 <div class="col-sm-7">
                     <textarea maxlength="500" name="cancel_reason" cols="55" row="2"></textarea>
@@ -436,7 +436,7 @@
         </div>
     </form>
 </div>
-<!-- end: CANCEL PROCESS MODAL --> 
+<!-- end: CANCEL PROCESS MODAL -->
 
 @stop
 

@@ -1,5 +1,5 @@
 <?php 
-    $prefix = explode('.', Route::currentRouteName())[0]; 
+    $prefix = explode('.', Route::currentRouteName())[0];
 ?>
 <!-- start: SIDEBAR -->
 <div class="main-navigation navbar-collapse collapse">
@@ -19,15 +19,16 @@
                 } else {
                     $active = "";
                 }
+
             ?>
             <li class="{{ @$active }}">
-                <a href="{{ route($v['route']) }}"><i class="{{ $v['ico'] }}"></i>
+                <a href="{{route($v['route']) }}"><i class="{{ $v['ico'] }}"></i>
                     <span class="title"> {{ trans('navigation.'.$k) }} </span><span class="selected"></span>
                 </a>
             </li>
             @endif
         @endforeach
-       
+
     </ul>
     <!-- end: MAIN NAVIGATION MENU -->
 </div>

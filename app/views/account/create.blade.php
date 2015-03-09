@@ -62,6 +62,8 @@
                     </span>
                 </div>
             </div>
+
+            @if(!Check::isClient(Auth::user()))
             <div class="form-group">
                 <label class="col-sm-2 control-label label_blue" for="form-field-3" >
                     {{ trans('experts.function') }}
@@ -70,6 +72,9 @@
                     {{ Form::text('function', Input::old('function'), ['class' => 'form-control']) }}
                 </div>
             </div>
+            @endif
+
+
             <div class="form-group">
                 <label class="col-sm-2 control-label label_blue">
                     {{ trans('experts.birthday') }}

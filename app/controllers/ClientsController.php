@@ -5,8 +5,7 @@ class ClientsController extends BaseController {
     protected $client;
 
     public function __construct(Client $client) {
-        $this->beforeFilter('admin', ['except' => 'show']);
-        $this->beforeFilter('expert', ['only' => 'show']);
+
         $this->client = $client;
     }
 
@@ -15,7 +14,8 @@ class ClientsController extends BaseController {
      *
      * @return View
      */
-    public function index() {
+    public function index()
+    {
         $clients = $this->client->all();
         return View::make('clients.index', compact('clients'));
     }
@@ -68,12 +68,20 @@ class ClientsController extends BaseController {
      * @param  int  $id
      * @return View
      */
-    public function show($id) {
+    public function show($id)
+    {
+        $isvalid = false;
+        if(Auth::user()->id == $id || Check::isAdmin()) {
+          $isvalid = true;
+        }
+        if (Auth::user()->id != $id || !$isvalid) {
+            return Redirect::route('clients.processes.index');
+        }
         $client = $this->client->find($id);
         if (is_null($client)) {
             return Redirect::route('clients.index');
         }
-        return View::make('clients.show', compact('client'));
+        return View::make('clients.show', compact('client', 'isvalid'));
     }
 
     /**
@@ -82,7 +90,12 @@ class ClientsController extends BaseController {
      * @param  int  $id
      * @return View
      */
-    public function edit($id) {
+    public function edit($id)
+    {
+        $isvalid = $this->isCurrentUserOrAdmin($id);
+        if (Auth::user()->id != $id || !$isvalid) {
+            return Redirect::route('clients.processes.index');
+        }
         $client = $this->client->find($id);
         $countries = Country::dropdown();
         if (is_null($client)) {
@@ -91,13 +104,26 @@ class ClientsController extends BaseController {
         return View::make('clients.edit')->with(['client' => $client, 'countries' => $countries]);
     }
 
+
+    private function isCurrentUserOrAdmin($id)
+    {
+        return Auth::user()->id == $id || Check::isAdmin();
+    }
+
+    private function isCurrentUser($id)
+    {
+        return Auth::user()->id == $id;
+    }
+
     /**
      * Updates the information given from the client form.
      *
      * @param  int  $id
      * @return Response
      */
-    public function update($id) {
+    public function update($id)
+    {
+        $isClient = $this->isCurrentUser($id);
         $input = Input::all();
         $client = $this->client->find($id);
         $rules = Client::$rules;
@@ -112,7 +138,9 @@ class ClientsController extends BaseController {
             Helper::makeNotificationAdmin('notifications.change_client', $client->name, 'clients/'.$client->user_id);
             
             Session::flash('notification', trans('notifications.client_update', ['name' => $client->name]));
-            return Redirect::route('clients.index');
+
+
+            return Redirect::route($isClient ? 'clients.processes.index': 'clients.index');
         }
         return Redirect::route('clients.edit', $id)
                         ->withInput(Input::except('photo'))
@@ -141,17 +169,22 @@ class ClientsController extends BaseController {
      *
      * @return String
      */
-    public function reset($id) {
+    public function reset($id)
+    {
+        $isClient = $this->isCurrentUser($id);
         $password = str_random(12);
         $client = $this->client->find($id);
         $client->user->password = $password;
         $client->user->save();
         if (!Helper::isNull($client->email)) {
-            Helper::resetEmail($client->name, $client->username, $password, $client->country_id);
+            Helper::resetEmail($client->name, $client->email, $password, $client->country_id);
         }
         Session::flash('notification', trans('notifications.client_reset', ['name' => $client->name]));
         Session::flash('credentials', trans('notifications.credentials', ['username' => $client->username, 'password' => $password]));
 
+        if($isClient) {
+            return route('clients.processes.index');
+        }
         return route('clients.index');
     }
 

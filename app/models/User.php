@@ -8,7 +8,7 @@ class User extends Eloquent implements UserInterface {
     use UserTrait;
 
     protected $table = 'users';
-    protected $fillable = ['username', 'name', 'email', 'photo'];
+    protected $fillable = ['username', 'name', 'email', 'photo', 'birthday'];
     protected $hidden = ['password', 'remember_token'];
     protected $guarded = array();
     

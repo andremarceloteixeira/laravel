@@ -755,6 +755,33 @@ var Main = function() {
 			runCustomSetting();
 			runClearSetting();
 			runQuickSideBar();
+
 		}
 	};
-}(); 
+
+}();
+
+
+$(document).ready(function() {
+
+      if(getUrlParameter('active')) {
+          $('.main-navigation-menu li.active').removeClass('active');
+          $('.main-navigation-menu .activeClass').parent().parent().addClass('active');
+      } else {
+          $('.main-navigation-menu .activeClass').parent().parent().removeClass('active');
+      }
+    // get param
+    function getUrlParameter(sParam)
+    {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++)
+        {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam)
+            {
+                return sParameterName[1];
+            }
+        }
+    }
+});

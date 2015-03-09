@@ -60,7 +60,7 @@ $notViewed = count(Notification::UnreadedJquery());
                 <i class="clip-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
-                @if(Check::isAdmin() || Check::isExpert())
+                @if(Check::isAdmin() || Check::isExpert() || Check::isClient(Auth::user()))
                 <li>
                     <a href="{{ route('account.create') }}">
                         <i class="clip-user-2"></i>

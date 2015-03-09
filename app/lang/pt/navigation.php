@@ -14,4 +14,5 @@ return array(
         'insureds' => 'Gestão de Segurados',
         'calendar' => 'O meu calendário',
         'clients.processes' => 'Os meus Processos',
+        'clients.edit.account' => 'Editar a minha conta',
 );

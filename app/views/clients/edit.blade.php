@@ -7,15 +7,17 @@
 <script type="text/javascript" src="{{ asset('assets/plugins/jquery-validation/dist/jquery.validate.min.js') }}"></script>
 @stop
 
+<?php if(isset($client->user)) : ?>
 @section('breadcrumb')
 <li><i class="clip-users"></i> <a href="{{ route('clients.index') }}">{{ trans('navigation.clients') }}</a></li>
 <li class="active"><i class="clip-user"></i> {{ trans('actions.update') . ' ' . trans('clients.singular') . ' ' . $client->user->name }}</li>
 @stop
 
+
 @section('title')
 {{ trans('navigation.clients') }} <small>{{ trans('actions.update') . ' ' . trans('clients.singular') . ' ' . $client->user->name }} </small>
 @stop
-
+<?php endif; ?>
 @section('main')
 
 @if(count($errors->all()) > 0)
@@ -25,6 +27,7 @@
     <p>{{ HTML::ul($errors->all()) }}</p>
 </div>
 @endif
+
 {{ Form::model($client, ['route' => ['clients.update', $client->user_id], 'method' => 'PATCH', 'files' => true, 'class' => 'form-horizontal', 'role' => 'form']) }}
 <div class="form-group">
     <label class="col-sm-2 control-label label_blue">

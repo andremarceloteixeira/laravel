@@ -5,14 +5,14 @@ class Client extends Eloquent {
     protected $table = 'clients';
     protected $primaryKey = 'user_id';
     public $incrementing = false;
-    protected $fillable = array('address', 'city', 'nif', 'zipcode', 'reference', 'country_id');
+    protected $fillable = array('address', 'city', 'nif', 'zipcode', 'reference', 'country_id', 'birthday');
 
     public static $rules = array(
         'username' => 'required|between:4,25|unique:users,username',
         'email' => 'email',
         'name' => 'required',
         'photo' => 'mimes:jpeg,gif,png|max:512',
-        'country_id' => 'required|exists:countries,id'
+        'country_id' => 'required|exists:countries,id',
     );
 
     public static $names = array(
@@ -24,7 +24,7 @@ class Client extends Eloquent {
         'address' => 'clients.address',
         'nif' => 'clients.nif',
         'zipcode' => 'clients.zipcode',
-        'cname' => 'clients.country_id'
+        'cname' => 'clients.country_id',
     );
 
 

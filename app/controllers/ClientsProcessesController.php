@@ -5,7 +5,8 @@ class ClientsProcessesController extends BaseController {
     protected $process;
     protected $client;
 
-    public function __construct(Process $process) {
+    public function __construct(Process $process)
+    {
         $this->beforeFilter('client');
         $this->client = Auth::user();
         $this->process = $process;
@@ -40,6 +41,14 @@ class ClientsProcessesController extends BaseController {
     {
         return View::make('clients.processes.create',  array('reference' => strtoupper(uniqid())));
     }
+
+
+
+    public function show()
+    {
+        return Redirect::route('clients.show', array('id' => $this->client->id, 'active' => true));
+    }
+
 
     public function store()
     {

@@ -14,4 +14,5 @@ return array(
         'insureds' => 'Insured Management',
         'calendar' => 'My Calendar',
         'clients.processes' => 'My Processes',
+        'clients.edit.account' => 'Edit my profile',
 );
