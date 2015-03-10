@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'pedromdspereira.93@gmail.com',
+	'username' => 'suporteperigest@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'NsEYS6xApDOrYUVCdty1Xg',
+        'password' => 'SAruxZZmRNN5eFH1VnH8BQ',
 
 	/*
 	|--------------------------------------------------------------------------
