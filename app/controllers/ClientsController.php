@@ -71,10 +71,10 @@ class ClientsController extends BaseController {
     public function show($id)
     {
         $isvalid = false;
-        if(Auth::user()->id == $id || Check::isAdmin()) {
+        if(Auth::user()->id == $id) {
           $isvalid = true;
         }
-        if (Auth::user()->id != $id || !$isvalid) {
+        if (Auth::user()->id != $id && !$isvalid && !Check::isAdmin()) {;
             return Redirect::route('clients.processes.index');
         }
         $client = $this->client->find($id);
@@ -93,7 +93,7 @@ class ClientsController extends BaseController {
     public function edit($id)
     {
         $isvalid = $this->isCurrentUserOrAdmin($id);
-        if (Auth::user()->id != $id || !$isvalid) {
+        if (Auth::user()->id != $id && !$isvalid && !Check::isAdmin()) {;
             return Redirect::route('clients.processes.index');
         }
         $client = $this->client->find($id);
