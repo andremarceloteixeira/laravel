@@ -26,7 +26,7 @@ class HomeController extends BaseController {
             return Redirect::route('clients.processes.index');
         }
     }
-    
+
     public function expertsProcesses() {
         $experts = Expert::all();
         if(count($experts) < 2) {

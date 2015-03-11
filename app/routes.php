@@ -68,3 +68,4 @@ Route::post('ajax/calendar/store', ['uses' => 'EventsController@store', 'as' => 
 Route::post('ajax/calendar/update', ['uses' => 'EventsController@update', 'as' => 'calendar.update']);
 Route::post('ajax/calendar/destroy', ['uses' => 'EventsController@destroy', 'as' => 'calendar.destroy']);
 Route::post('ajax/calendar/move', ['uses' => 'EventsController@move', 'as' => 'calendar.move']);
+Route::resource('contact', 'ContactController');

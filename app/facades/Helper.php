@@ -265,6 +265,22 @@ class Helper {
         \Event::fire('email.template', [$data]);
     }
 
+
+    public function sendContactEmail($data)
+    {
+        $data['to'] = 'marcelo.t80@gmail.com';
+        $data['view'] = 'emails.contact.send';
+        $data['subject'] = 'Pedido de Contacto ou informacao';
+        $data['fristName'] = $data['first_name'];
+        $data['lastName'] = $data['last_name'];
+        $data['name'] =  $data['first_name'];
+        $data['email'] = $data['email'];
+        $data['assunto'] = $data['assunto'];
+        $data['comments'] = $data['comments'];
+        $data['lang'] = 'pt';
+        \Event::fire('email.template', [$data]);
+    }
+
     public function chargeEmail($name, $certificate, $email, $id) {
         $lang = $this->convertLocale($id);
         $data['to'] = $email;
