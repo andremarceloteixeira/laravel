@@ -268,7 +268,7 @@ class Helper {
 
     public function sendContactEmail($data)
     {
-        $data['to'] = 'marcelo.t80@gmail.com';
+        $data['to'] = 'geral@perigest.pt';
         $data['view'] = 'emails.contact.send';
         $data['subject'] = 'Pedido de Contacto ou informacao';
         $data['fristName'] = $data['first_name'];
