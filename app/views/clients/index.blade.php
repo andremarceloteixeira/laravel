@@ -50,7 +50,7 @@
                 <td class="hidden-xs hidden-md">{{ $c->city }}</td>
                 <td class="hidden-xs hidden-md">{{ $c->zipcode }}</td>
                 <td class="hidden-xs hidden-md" >{{ $c->country->name }}</td>
-                <td class="center">
+                <td class="center" style="width: 8%; width=25%">
                     <a href="{{ route('clients.show', ['id' => $c->user_id]) }}" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="{{ trans('actions.show') }}"><i class="clip-info-2"></i></a>
                     <a href="{{ route('clients.edit', ['id' => $c->user_id]) }}" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="{{ trans('actions.update') }}"><i class="fa fa-edit"></i></a>
                     <button data-placement="top" data-type="sync" data-original-title="{{ trans('actions.password_reset') }}" data-title="{{ trans('actions.reseting', ['name' => $c->name, 'type' => trans('clients.singular')]) }}" data-body="{{ trans('actions.are_sure_reset', ['name' => $c->name, 'type' => trans('clients.singular')]) }}" data-url="{{ route('clients.reset', ['id' => $c->user_id]) }}" data-method="GET" type="button" class="btn btn-info btn-xs confirm-btn tooltips"><i class="fa fa-key fa fa-white"></i></button>

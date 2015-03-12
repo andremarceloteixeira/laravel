@@ -177,7 +177,7 @@ class ClientsController extends BaseController {
         $client->user->password = $password;
         $client->user->save();
         if (!Helper::isNull($client->email)) {
-            Helper::resetEmail($client->name, $client->email, $password, $client->country_id);
+            Helper::resetEmail($client->name, $client->email, $password, $client->country_id, $client->username);
         }
         Session::flash('notification', trans('notifications.client_reset', ['name' => $client->name]));
         Session::flash('credentials', trans('notifications.credentials', ['username' => $client->username, 'password' => $password]));

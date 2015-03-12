@@ -253,15 +253,18 @@ class Helper {
         \Event::fire('email.template', [$data]);
     }
 
-    public function resetEmail($name, $email, $password, $id) {
+    public function resetEmail($name, $email, $password, $id, $username = '') {
         $lang = $this->convertLocale($id);
+        $username = !empty($username) ? $username : $name; // if
         $data['to'] = $email;
         $data['view'] = 'emails.auth.reset';
         $data['subject'] = 'emails.reset-subject';
         $data['name'] = $name;
         $data['email'] = $email;
         $data['password'] = $password;
+        $data['username'] = $username;
         $data['lang'] = $lang;
+
         \Event::fire('email.template', [$data]);
     }
 
