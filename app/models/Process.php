@@ -161,9 +161,11 @@ class Process extends Eloquent
      */
     public function incrementProcessCertificate()
     {
-        $lastProcess = $this->orderby('created_at', 'desc')->first();
-        if (!empty($lastProcess)) {
-            $reference = explode('/', $lastProcess->certificate);
+
+        $lastProcess = DB::table('processes')->select('certificate')->where('id', DB::raw("(select max(`id`) from processes WHERE certificate != '' )"))->get();
+        $lastProcess = json_decode(json_encode($lastProcess),true);
+        if (isset($lastProcess[0]['certificate'])) {
+            $reference = explode('/', $lastProcess[0]['certificate']);
             $reference = $reference[0] + 1 . '/' . substr(date("Y"), 2);
         }
         return $reference;
