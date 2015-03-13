@@ -1,9 +1,26 @@
 <?php
 
-class Process extends Eloquent {
+class Process extends Eloquent
+{
 
     protected $table = 'processes';
-    protected $fillable = array('certificate', 'reference', 'client_id', 'insured_id', 'taker_id', 'status_id', 'expert_id', 'email', 'apolice', 'type_id', 'preliminar_date', 'situation_observations', 'situation_losts', 'deadline_preliminar', 'deadline_complete');
+    protected $fillable = array(
+        'certificate',
+        'reference',
+        'client_id',
+        'insured_id',
+        'taker_id',
+        'status_id',
+        'expert_id',
+        'email',
+        'apolice',
+        'type_id',
+        'preliminar_date',
+        'situation_observations',
+        'situation_losts',
+        'deadline_preliminar',
+        'deadline_complete'
+    );
     public static $rules = array(
         'certificate' => array('required', 'regex:/[0-9]+\/[0-9]{2}\b/', 'unique:processes,certificate'),
         'preliminar_date' => 'date_format:"d/m/Y"',
@@ -33,11 +50,14 @@ class Process extends Eloquent {
         'client_others_info' => 'processes.client_others_info'
     );
 
-    public static function create(array $attributes = array()) {
+    public static function create(array $attributes = array())
+    {
         if (array_key_exists('preliminar_date', $attributes)) {
             if (Helper::isNull($attributes['preliminar_date'])) {
                 if (array_key_exists('deadline_preliminar', $attributes)) {
-                    $attributes['preliminar_date'] = Carbon::now()->addDays($attributes['deadline_preliminar'])->format('d/m/Y');
+                    $attributes['preliminar_date'] = Carbon::now()->addDays($attributes['deadline_preliminar'])->format(
+                        'd/m/Y'
+                    );
                 } else {
                     $attributes['preliminar_date'] = Carbon::now()->addDays(1)->format('d/m/Y');
                 }
@@ -50,11 +70,16 @@ class Process extends Eloquent {
         return $process;
     }
 
-    public function update(array $attributes = array()) {
+    public function update(array $attributes = array())
+    {
         if (!File::exists(Config::get('settings.process_folder') . $this->folder)) {
             File::makeDirectory(Config::get('settings.process_folder') . $this->folder, 0777);
         }
-        if (array_key_exists('situation_observations', $attributes) || array_key_exists('situation_losts', $attributes)) {
+        if (array_key_exists('situation_observations', $attributes) || array_key_exists(
+                'situation_losts',
+                $attributes
+            )
+        ) {
             if ($attributes['situation_observations'] != $this->situation_observations || $attributes['situation_losts'] != $this->situation_losts) {
                 $this->situation_date = Carbon::now()->format('d/m/Y');
             }
@@ -69,85 +94,124 @@ class Process extends Eloquent {
         parent::update($attributes);
     }
 
-    public function client() {
+    public function client()
+    {
         return $this->belongsTo('Client');
     }
 
-    public function expert() {
+    public function expert()
+    {
         return $this->belongsTo('Expert');
     }
 
-    public function status() {
+    public function status()
+    {
         return $this->belongsTo('Status');
     }
 
-    public function type() {
+    public function type()
+    {
         return $this->belongsTo('Type');
     }
 
-    public function insured() {
+    public function insured()
+    {
         return $this->belongsTo('Insured', 'insured_id');
     }
 
-    public function taker() {
+    public function taker()
+    {
         return $this->belongsTo('Insured', 'taker_id');
     }
 
-    public function processAttachs() {
+    public function processAttachs()
+    {
         return $this->hasMany('ProcessAttach');
     }
 
-    public function clientAttachs() {
+    public function clientAttachs()
+    {
         return $this->hasMany('ClientAttach');
     }
 
-    public function fields() {
+    public function fields()
+    {
         return $this->hasMany('ProcessField');
     }
 
-    public function scopeMine($query) {
+    public function scopeMine($query)
+    {
         if (Check::isAdmin()) {
             return $query;
-        } else if (Check::isExpert()) {
-            return $query->where('expert_id', '=', Auth::user()->id);
-        } else if (Check::isClient()) {
-            return $query->where('client_id', '=', Auth::user()->id);
+        } else {
+            if (Check::isExpert()) {
+                return $query->where('expert_id', '=', Auth::user()->id);
+            } else {
+                if (Check::isClient()) {
+                    return $query->where('client_id', '=', Auth::user()->id);
+                }
+            }
         }
     }
 
-    public function scopePending($query) {
+
+    /**
+     * Increment Process Certificate
+     * @return array|string
+     */
+    public function incrementProcessCertificate()
+    {
+        $lastProcess = $this->orderby('created_at', 'desc')->first();
+        if (!empty($lastProcess)) {
+            $reference = explode('/', $lastProcess->certificate);
+            $reference = $reference[0] + 1 . '/' . substr(date("Y"), 2);
+        }
+        return $reference;
+    }
+
+
+    public function scopePending($query)
+    {
         return $query->where('status_id', '=', 1);
     }
 
-    public function scopeProcessing($query) {
+    public function scopeProcessing($query)
+    {
         return $query->where('status_id', '=', 2);
     }
 
-    public function scopeCancelled($query) {
+    public function scopeCancelled($query)
+    {
         return $query->where('status_id', '=', 4);
     }
 
-    public function scopeCompleted($query) {
+    public function scopeCompleted($query)
+    {
         return $query->where('status_id', '=', 3);
     }
 
-    public function getCreatedAtDateAttribute() {
+    public function getCreatedAtDateAttribute()
+    {
         return Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['created_at'])->format('Y-m-d');
     }
 
-    public function getUpdatedAtDateAttribute() {
+    public function getUpdatedAtDateAttribute()
+    {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['updated_at'])->format('Y-m-d');
     }
 
-    public function getInsAttribute() {
+    public function getInsAttribute()
+    {
         return $this->insured->name;
     }
-    
-    public function getTakAttribute() {
+
+    public function getTakAttribute()
+    {
         return $this->taker->name;
     }
 
-    public function getFolderAttribute() {
+    public function getFolderAttribute()
+    {
         $year = substr(Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['created_at'])->year, -2);
         return $this->attributes['id'] . '-' . $year . '/';
     }

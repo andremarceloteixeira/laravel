@@ -52,6 +52,7 @@ class PendingController extends BaseController {
                 if (!is_null($expert)) {
                     $process->expert_id = $input['expert_id'];
                     $process->status_id = 2;
+                    $process->certificate = $process->incrementProcessCertificate();
                     $process->save();
                     Helper::makeNotification(
                         'notifications.charge_process',
