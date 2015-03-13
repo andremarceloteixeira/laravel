@@ -53,7 +53,7 @@ Route::get('ajax/processes/charge', ['uses' => 'PendingController@charge', 'as' 
 Route::resource('pending', 'PendingController', ['only' => ['index']]);
 
 Route::resource('me/processes', 'ExpertsProcessesController', ['names' => ['index' => 'experts.processes.index', 'edit' => 'experts.processes.edit', 'update' => 'experts.processes.update'], 'only' => ['index', 'edit', 'update']]);
-
+Route::get('me/processes/{id}', ['uses' => 'ExpertsProcessesController@index']);
 Route::resource('my/processes', 'ClientsProcessesController',
     ['names' => [
                             'index' => 'clients.processes.index',
