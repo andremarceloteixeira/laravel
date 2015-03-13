@@ -459,14 +459,13 @@ class Helper {
     }
 
     public function makeProcessKeys($process, $keys, $values) {
+
         if (is_null($process) || is_null($keys) || is_null($values)) {
             return;
         }
         \ProcessField::where('process_id', '=', $process->id)->delete();
         for ($i = 0; $i < count($keys); $i++) {
-            if ($keys[$i] != '' && $values[$i] != '') {
-                \ProcessField::create(['process_id' => $process->id, 'key' => $keys[$i], 'value' => $values[$i]]);
-            }
+            \ProcessField::create(['process_id' => $process->id, 'key' => $keys[$i], 'value' => $values[$i]]);
         }
     }
 
