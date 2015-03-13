@@ -22,33 +22,77 @@ class PendingController extends BaseController {
                         ->with(['experts' => $experts]);
     }
 
-    public function charge() {
+    public function charge()
+    {
         $input = Input::all();
         $v = Validator::make($input, ['id' => 'required|exists:processes,id', 'expert_id' => 'required|numeric']);
         if ($v->passes()) {
             $process = $this->process->find($input['id']);
             if ($process->status_id != 1) {
-                return Response::json(['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.pending_no_more')]);
+                return Response::json(
+                    [
+                        'status' => 'error',
+                        'title' => trans('actions.error'),
+                        'message' => trans('notifications.pending_no_more')
+                    ]
+                );
             }
             if (!is_null($process->expert_id)) {
-                return Response::json(['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.pending_already_expert')]);
+                return Response::json(
+                    [
+                        'status' => 'error',
+                        'title' => trans('actions.error'),
+                        'message' => trans('notifications.pending_already_expert')
+                    ]
+                );
             }
             if ($input['expert_id'] > 0) {
                 $expert = $this->expert->find($input['expert_id']);
+
                 if (!is_null($expert)) {
                     $process->expert_id = $input['expert_id'];
                     $process->status_id = 2;
                     $process->save();
-                    Helper::makeNotification('notifications.charge_process', $process->certificate, 'me/processes/'.$process->id, $process->expert_id);
-                    return Response::json(['status' => 'success', 'title' => trans('actions.success'), 'message' => trans('notifications.pending_processing_expert', ['id' => $process->certificate, 'name' => $expert->name])]);
+                    Helper::makeNotification(
+                        'notifications.charge_process',
+                        $process->certificate,
+                        'me/processes/' . $process->id,
+                        $process->expert_id
+                    );
+                    $certificate = !empty($process->certificate) ? $process->certificate : null;
+                    Helper::chargeEmail($expert->getUsernameAttribute(), $certificate, $expert->getEmailAttribute(), $process->client->country_id);
+                    return Response::json(
+                        [
+                            'status' => 'success',
+                            'title' => trans('actions.success'),
+                            'message' => trans(
+                                'notifications.pending_processing_expert',
+                                ['id' => $process->certificate, 'name' => $expert->name]
+                            )
+                        ]
+                    );
                 }
             }
             $process->status_id = 2;
             $process->save();
-            Helper::makeNotificationAdmin('notifications.new_process', $process->certificate, 'processes/'.$process->id);
-            return Response::json(['status' => 'success', 'title' => trans('actions.success'), 'message' => trans('notifications.pending_processing', ['id' => $process->certificate])]);
+            Helper::makeNotificationAdmin(
+                'notifications.new_process',
+                $process->certificate,
+                'processes/' . $process->id
+            );
+
+
+            return Response::json(
+                [
+                    'status' => 'success',
+                    'title' => trans('actions.success'),
+                    'message' => trans('notifications.pending_processing', ['id' => $process->certificate])
+                ]
+            );
         }
-        return Response::json(['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.pending_id')]);
+        return Response::json(
+            ['status' => 'error', 'title' => trans('actions.error'), 'message' => trans('notifications.pending_id')]
+        );
     }
 
     public function pending() {

@@ -102,7 +102,6 @@ class Helper {
             $data['lang'] = $lang;
             \Event::fire('email.template', [$data]);
         }
-
         if ($download) {
             $content = file_get_contents($path);
             return \Response::make($content, 200, array('content-type' => 'application/pdf'));
