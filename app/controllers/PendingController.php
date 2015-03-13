@@ -61,7 +61,7 @@ class PendingController extends BaseController {
                         $process->expert_id
                     );
                     $certificate = !empty($process->certificate) ? $process->certificate : null;
-                    Helper::chargeEmail($expert->getUsernameAttribute(), $certificate, $expert->getEmailAttribute(), $process->client->country_id);
+                    Helper::chargeEmail($expert->getUsernameAttribute(), $certificate, $process->client->email, $process->client->country_id);
                     return Response::json(
                         [
                             'status' => 'success',

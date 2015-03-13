@@ -12,5 +12,5 @@ return array(
         'reset-content' => 'Sua contraseña ha sido regenerada y cambiada.<p>Sus nuevas credenciales:<br><b>Usuario:</b> :email<br><b>Contraseña:</b>'
         . ' :password',
         'charge-subject' => 'Proceso en procesamiento',
-        'charge-content' => 'Estamos procesando su caso, con el <b>Cert. Nº: :certificate</b>.',
+        'charge-content' => 'Estamos procesando su caso, con el <b> Cert. Nº: :certificate</b>.',
 );

@@ -4,7 +4,7 @@
 {{ trans('emails.welcome', ['name' => $name]) }}
 
 <p>
-    {{ trans('emails.charge-content', ['certificate' => $certificate]) }}
+    {{ trans('emails.emails.charge-content', ['certificate' => $certificate]) }}
 </p>
 
 <p>
