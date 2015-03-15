@@ -22,7 +22,7 @@ class Process extends Eloquent
         'deadline_complete'
     );
     public static $rules = array(
-        'certificate' => array('required', 'regex:/[0-9]+\/[0-9]{2}\b/', 'unique:processes,certificate'),
+       // 'certificate' => array('required', 'regex:/[0-9]+\/[0-9]{2}\b/', 'unique:processes,certificate'),
         'preliminar_date' => 'date_format:"d/m/Y"',
         'type_id' => 'required|exists:types,id',
         'email' => 'required|email',

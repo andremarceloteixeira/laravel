@@ -97,10 +97,16 @@ $(document).ready(function() {
                 </label>
                 <div class="col-sm-9">
                     <span class="input-icon input-icon-right">
-                        {{ Form::text('certificate', Input::old('certificate'), ['class' => 'form-control']) }}
-                        <i class="fa fa-asterisk"></i> 
+                        <?php if(!$process->certificate) { ?>
+                            {{ Form::text('certificate', Input::old('certificate'), ['class' => 'form-control']) }}
+                            <i class="fa fa-asterisk"></i>
+                        <?php } else { ?>
+                            <label class="col-sm-1 control-label label_blue">
+                                {{ $process->certificate  }}
+                            </label>
+                            <input type="hidden" name="certificate" value="<?php echo $process->certificate; ?>"/>
+                        <?php } ?>
                     </span>
-                    <span class="help-block"><i class="fa fa-info-circle"></i> Só serão aceites certificados com padrão: numero_de_processo/ano (exemplo: 123/15)</span>
                 </div>
             </div>
             <div class="form-group">

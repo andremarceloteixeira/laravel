@@ -189,7 +189,7 @@ var Modal = function() {
     };
 
     var confirm = function() {
-        $('.confirm-btn').click(function() {
+        $('tbody').on("click", ".confirm-btn", function() {
             ConfirmForm($(this));
         });
     };

@@ -127,7 +127,7 @@ class ProcessesController extends BaseController
         }
         $input = Input::all();
         $rules = Process::$rules;
-        $rules['certificate'][2] = 'unique:processes,certificate,' . $id;
+        //$rules['certificate'][2] = 'unique:processes,certificate,' . $id;
         $validation = Validator::make($input, $rules);
         $validation->setAttributeNames(Helper::niceNames('Process'));
         if ($validation->passes()) {
@@ -422,6 +422,9 @@ class ProcessesController extends BaseController
                 $process->finish = Carbon::now()->format('Y-m-d H:i:s');
 
                 Helper::makeNotificationAdmin('notifications.complete_process', $process->certificate, 'processes/' . $process->id);
+
+                $expert = (new User)->find($process->expert_id);
+                Helper::chargeEmail($expert->username, $process->certificate, $expert->email, $process->client->country_id);
                 Session::flash('notification', trans('notifications.process_complete', ['name' => $process->certificate, 'type' => trans('processes.singular')]));
                 if (Input::hasFile('invoice')) {
                     $invoice = Input::file('invoice');
