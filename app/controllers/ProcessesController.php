@@ -423,8 +423,7 @@ class ProcessesController extends BaseController
 
                 Helper::makeNotificationAdmin('notifications.complete_process', $process->certificate, 'processes/' . $process->id);
 
-                $expert = (new User)->find($process->expert_id);
-                Helper::chargeEmail($expert->username, $process->certificate, $expert->email, $process->client->country_id);
+
                 Session::flash('notification', trans('notifications.process_complete', ['name' => $process->certificate, 'type' => trans('processes.singular')]));
                 if (Input::hasFile('invoice')) {
                     $invoice = Input::file('invoice');
@@ -433,6 +432,9 @@ class ProcessesController extends BaseController
                         $process->invoice = $path2 . $filename2;
                     }
                 }
+
+                $expert = (new User)->find($process->expert_id);
+                Helper::chargeEmail($expert->username, $process->certificate, $process->email, $process->client->country_id, true);
                 $process->save();
                 return Redirect::back();
             }

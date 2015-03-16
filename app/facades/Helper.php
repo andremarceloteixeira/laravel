@@ -283,14 +283,15 @@ class Helper {
         \Event::fire('email.template', [$data]);
     }
 
-    public function chargeEmail($name, $certificate, $email, $id) {
+    public function chargeEmail($name, $certificate, $email, $id, $complete = false) {
         $lang = $this->convertLocale($id);
         $data['to'] = $email;
         $data['view'] = 'emails.process.charge';
-        $data['subject'] = 'emails.charge-subject';
+        $data['subject'] = $complete ? 'emails.charge-subject-complete' :'emails.charge-subject';
         $data['name'] = $name;
         $data['certificate'] = $certificate;
         $data['lang'] = $lang;
+        $data['complete'] = $complete;
         \Event::fire('email.template', [$data]);
     }
 

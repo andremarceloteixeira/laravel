@@ -12,5 +12,7 @@ return array(
         'reset-content' => 'A sua palavra-chave foi regenerada e alterada.<p>As suas novas credenciais:<br><b>Utilizador:</b> :email<br><b>Palavra-Chave:</b>'
         . ' :password',
         'charge-subject' => 'Processo em processamento',
+        'charge-subject-complete' => 'Processo completo',
         'charge-content' => 'O seu processo encontra-se agora em processamento, com o <b> Cert. Nº: :certificate </b>.',
+         'charge-content-complete' => 'O seu processo encontra-se agora completo, com o <b> Cert. Nº: :certificate </b>.',
 );

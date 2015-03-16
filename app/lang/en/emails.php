@@ -12,5 +12,8 @@ return array(
         'reset-content' => 'Your password has been regenerated and changed.<p>Your new credentials:<br><b>Username:</b> :email<br><b>Password:</b>'
         . ' :password',
         'charge-subject' => 'Process Processing',
+        'charge-subject-complete' => 'Process Complete',
         'charge-content' => 'Your process was charged to an expert and is now in process, with the <b >Cert.: :certificate</b>.',
+         'charge-content-complete' => 'Your process was charged to an expert and is now complete, with the <b >Cert.: :certificate</b>.'
+
 );
