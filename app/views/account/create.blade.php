@@ -9,7 +9,9 @@
 @stop
 
 @section('title')
+<?php if(!empty($user)): ?>
 {{ trans('navigation.profile') }} <small>{{ $user->name }}</small>
+<?php endif; ?>
 @stop
 
 @section('main')
@@ -90,7 +92,9 @@
                 <div class="col-sm-9">
                     <div class="fileupload fileupload-new" data-provides="fileupload">
                         <div class="fileupload-new thumbnail" style="width: 125px; height: 125px;">
+                            <?php if(!empty($user)): ?>
                             {{ HTML::image($user->photo) }}
+                            <?php endif;?>
                         </div>
                         <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 125px; max-height: 125px; line-height: 20px;"></div>
                         <div>

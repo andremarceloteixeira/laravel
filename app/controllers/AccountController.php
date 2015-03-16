@@ -11,6 +11,8 @@ class AccountController extends BaseController {
             $this->user = Auth::user()->admin;
         } elseif( Check::isClient($user)) {
             $this->user = Auth::user()->client;
+        } elseif( Check::isExpert($user)) {
+            $this->user = Auth::user();
         } else {
             $this->user = Auth::user()->expert;
         }
